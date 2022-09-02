@@ -10,10 +10,10 @@ export default function Home() {
       <div className="flex flex-col items-center justify-evenly min-h-screen bg-pink-100">
         <div className="text-center flex flex-col items-center">
           <img src="./1.svg" height={200} width={200} alt="" />
-          <div className="text-3xl font-bold text-pink-600 py-4">
+          <div className="text-3xl font-bold text-pink-600 py-4 text-black">
             Welcome to WishList
           </div>
-          <div>
+          <div className="text-black">
             Share your wishlist with your friends and close ones <br /> and
             exchange gifts.
           </div>

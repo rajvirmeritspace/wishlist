@@ -169,7 +169,7 @@ const WishList = () => {
           <div>
             {thisuser === userName && (
               <div
-                className="border-pink-500 border-2 rounded mt-4 px-3 cursor-pointer py-2 hover:bg-pink-300 hover:border-pink-300"
+                className="text-black border-pink-500 border-2 rounded mt-4 px-3 cursor-pointer py-2 hover:bg-pink-300 hover:border-pink-300"
                 onClick={() => setAddItemModal(true)}
               >
                 Add an Item
