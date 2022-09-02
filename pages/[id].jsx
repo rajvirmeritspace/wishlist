@@ -57,18 +57,20 @@ const WishList = () => {
       setErrormessage("Please enter a description");
       return;
     }
-    await axios
-      .post("https://hellowishlist.herokuapp.com/api/wishlist/postWishlist", {
-        name,
-        description,
-        price,
-        want: wish,
-        userID: window.location.href.split("/")[3],
-      })
-      .then((res) => {
-        setList(...list, res.data);
-        setAddItemModal(false);
-      });
+    if (thisuser === userName) {
+      await axios
+        .post("https://hellowishlist.herokuapp.com/api/wishlist/postWishlist", {
+          name,
+          description,
+          price,
+          want: wish,
+          userID: window.location.href.split("/")[3],
+        })
+        .then((res) => {
+          setList(...list, res.data);
+          setAddItemModal(false);
+        });
+    }
   };
 
   return (
