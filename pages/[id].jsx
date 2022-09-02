@@ -69,9 +69,9 @@ const WishList = () => {
         })
         .then((res) => {
           setList(...list, res.data);
-          setAddItemModal(false);
         });
     }
+    setAddItemModal(false);
   };
 
   return (
