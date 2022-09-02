@@ -58,6 +58,7 @@ const WishList = () => {
       return;
     }
     if (thisuser === userName) {
+      console.log(thisuser, userName);
       await axios
         .post("https://hellowishlist.herokuapp.com/api/wishlist/postWishlist", {
           name,
