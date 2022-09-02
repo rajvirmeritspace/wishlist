@@ -15,7 +15,7 @@ const WishList = () => {
   const [wish, setWish] = useState("N/A");
   const [list, setList] = useState([]);
   const [errormessage, setErrormessage] = useState("");
-  const [] = useState("");
+  const [postWishlist, setPostWishlist] = useState(false);
 
   const router = useRouter();
 
@@ -45,6 +45,9 @@ const WishList = () => {
           });
       };
       getWishlist();
+    }
+    if (thisuser === userName) {
+      setPostWishlist(true);
     }
   }, [addItemModal]);
 
@@ -171,7 +174,7 @@ const WishList = () => {
             ""
           )}
           <div>
-            {thisuser === userName && (
+            {postWishlist && (
               <div
                 className="text-black border-pink-500 border-2 rounded mt-4 px-3 cursor-pointer py-2 hover:bg-pink-300 hover:border-pink-300"
                 onClick={() => setAddItemModal(true)}
