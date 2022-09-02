@@ -158,14 +158,18 @@ const WishList = () => {
         <div className="flex flex-col items-center min-h-screen pt-20 bg-pink-100">
           {!thisuser && (
             <div
-              className="relative left-1/4 bg-pink-300 px-6 py-2 rounded-lg cursor-pointer"
+              className="text-black relative left-1/4 bg-pink-300 px-6 py-2 rounded-lg cursor-pointer"
               onClick={() => router.push("/")}
             >
               Login
             </div>
           )}
           <img src="./1.svg" height="100" width="100" className="pb-5" alt="" />
-          {userName ? <div>{userName}&apos;s WishList</div> : ""}
+          {userName ? (
+            <div className="text-black">{userName}&apos;s WishList</div>
+          ) : (
+            ""
+          )}
           <div>
             {thisuser === userName && (
               <div
