@@ -6,7 +6,7 @@ import SingleItem from "../components/SingleItem";
 import { useRouter } from "next/router";
 
 const WishList = () => {
-  const { userName, setUserName, userID } = useContext(LoginContext);
+  const { userName, setUserName, thisuser } = useContext(LoginContext);
   // const userName = "Rajvir Ahmed Shv";
   const [addItemModal, setAddItemModal] = useState(false);
   const [name, setName] = useState("");
@@ -15,21 +15,12 @@ const WishList = () => {
   const [wish, setWish] = useState("N/A");
   const [list, setList] = useState([]);
   const [errormessage, setErrormessage] = useState("");
-  const [thisuser, setThisuser] = useState("");
+  const [] = useState("");
 
   const router = useRouter();
 
   useEffect(() => {
     const user = window.location.href.split("/")[3];
-    const getUserFromToken = async () => {
-      const token = localStorage.getItem("token");
-      await axios
-        .get(`https://graph.facebook.com/me?access_token=${token}`)
-        .then((response) => {
-          setThisuser(response.data.name);
-        });
-    };
-    getUserFromToken();
     if (user) {
       const getUser = async () => {
         await axios
@@ -55,7 +46,7 @@ const WishList = () => {
       };
       getWishlist();
     }
-  }, [thisuser, addItemModal]);
+  }, [addItemModal]);
 
   const handleSubmit = async () => {
     if (name === "") {

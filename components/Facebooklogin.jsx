@@ -17,7 +17,7 @@ const Facebooklogin = () => {
         name: response.name,
         userID: response.userID,
       });
-      router.push(`/${response.userID}`);
+      router.push("/hello");
     }
   };
 
