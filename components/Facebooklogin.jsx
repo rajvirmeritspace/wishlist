@@ -11,7 +11,7 @@ const Facebooklogin = () => {
   const responseFacebook = async (response) => {
     localStorage.setItem("token", response.accessToken);
     setUserName(response.name);
-    setUserID(response.UserID);
+    setUserID(response.userID);
     if (response) {
       axios.post("https://hellowishlist.herokuapp.com/api/user/signup", {
         name: response.name,
