@@ -174,14 +174,14 @@ const WishList = () => {
             ""
           )}
           <div>
-            {postWishlist && (
+            {/* {postWishlist && (
               <div
                 className="text-black border-pink-500 border-2 rounded mt-4 px-3 cursor-pointer py-2 hover:bg-pink-300 hover:border-pink-300"
                 onClick={() => setAddItemModal(true)}
               >
                 Add an Item
               </div>
-            )}
+            )} */}
           </div>
           <div className="mt-10"></div>
           {list.length > 0 &&
