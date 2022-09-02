@@ -6,17 +6,18 @@ import axios from "axios";
 
 const Facebooklogin = () => {
   const router = useRouter();
-  const { setUserName } = useContext(LoginContext);
+  const { setUserName, setUserID } = useContext(LoginContext);
 
   const responseFacebook = async (response) => {
     localStorage.setItem("token", response.accessToken);
     setUserName(response.name);
+    setUserID(response.userID);
     if (response) {
       axios.post("https://hellowishlist.herokuapp.com/api/user/signup", {
         name: response.name,
         userID: response.userID,
       });
-      router.push(`/${response.userID}`);
+      router.push("/hello");
     }
   };
 
